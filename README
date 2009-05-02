@@ -1,0 +1,23 @@
+
+Description:
+------------
+
+Ajaxy Quote database developed specifically for RIT.
+
+
+deps
+----
+jquery (pulled from google)
+jquery ui (js pulled from google, css local)
+    - Modal dialogs 
+    - CSS icons support
+    - Other cool stuff.
+jquery corners plugin (locally tracked)
+
+MySQL 5 something 
+php 5.2.3 because that's what I happen to have installed on my old OpenSBD server 
+
+
+
+note - this repo is a direct sync of my working directory on my production
+server, so what's here is pretty much what's running live.  
