@@ -1,0 +1,78 @@
+
+body
+{
+   text-align: center;
+   min-width: 600px;
+   background-color: #F8F7ED;   
+}
+
+#wrapper
+{
+}
+
+.quote-title 
+{
+        background-color: #FF9933;
+        width: 100%;
+        border-width: 1px;
+        border-bottom: 0.1em;
+        border-bottom-color:black;
+        border-bottom-style: solid;
+}
+
+#uname 
+{
+    float: right;
+    text-align: right;
+    width:400px;
+}
+
+#form
+{
+    text-align: left;
+}
+
+.q-container
+{
+    margin:20px auto;
+    width:526px;
+    text-align: left;
+    padding: 0px 0px 10px 0px;
+
+    /*background-color: #F8F7ED;*/
+    background-color: #D5D3BA;
+
+    border-width: 0.15em;
+    border-color: black;
+    border-style: solid;
+
+
+}
+
+#quote
+{
+    width: 515px;
+    font-size: 1.5em;
+    margin-top: 7px;
+    margin-bottom: auto;
+    margin-left: 8px;
+    margin-right: auto;
+    padding-right: 8px;
+}
+
+#nav
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #FF9933;
+}
+
+a:link 
+{
+    color: black;
+}
+
+a:visited
+{
+    color: #808080;
+}
