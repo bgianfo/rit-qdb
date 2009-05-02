@@ -37,8 +37,6 @@ function fetch( $result )
 
 function free( $result )
 {
-  echo $result;
-  echo gettype($result);
   mysql_free_result($result);
 }
 
