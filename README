@@ -18,6 +18,7 @@ MySQL 5 something
 php 5.2.3 because that's what I happen to have installed on my old OpenSBD server 
 
 
+db.sql holds a create script for the current database schema
 
 note - this repo is a direct sync of my working directory on my production
 server, so what's here is pretty much what's running live.  
