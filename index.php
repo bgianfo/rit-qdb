@@ -27,12 +27,9 @@
     </head>
 <body>
 <div id="nav">
-    <form id="search">
-        <label>Search:</label> <input size="10" id="search" type="text">
-    </form>
+    <strong> RIT Quote Database </strong>
 </div>
 <div>
-<img src="/rit/style/logo.gif"></img><br>
 <button id="add-quote" class="ui-button ui-state-default
 ui-corner-all">Add a new quote</button>
 </div>
@@ -46,9 +43,9 @@ while ( $line = fetch($result) )
     echo "<div class=\"q-container\">\n";
         echo "<table class=\"quote-title\">\n";
             echo "<tr>\n";
-            echo "<td><a href=\"/rit/quote.php?id=".$line["id"]."\">#".$line["id"]."</a></td>";
+            echo "<td><a title=\"Direct Link\" href=\"/rit/quote.php?id=".$line["id"]."\">#".$line["id"]."</a></td>";
                 echo "<td> score: ".$line["score"]."</td>";
-                echo "<td><a id=\"".$line["id"]."\" class=\"ui-icon ui-icon-plusthick\" >+</a></td>";
+                echo "<td><a title=\"vote up\" id=\"".$line["id"]."\" class=\"ui-icon ui-icon-plusthick\" >+</a></td>";
                 echo "<td id=\"uname\" ><b>user: </b>".$line["user"]."</td>\n";
             echo "</tr>\n";
         echo "</table>\n";

@@ -62,9 +62,10 @@ body
 
 #nav
 {
-    padding-top: 10px;
-    padding-bottom: 10px;
     background-color: #FF9933;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: left;
 }
 
 a:link 

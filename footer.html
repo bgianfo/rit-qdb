@@ -1,6 +1,6 @@
 <div id="dialog">
 <form id="form">
-    User: <input size="10" id="user-input" name="user" type="text"></br>
+<strong>User:</strong></br> <input size="10" id="user-input" name="user" type="text"></br>
     <strong>Quote</strong></br>
     <textarea id="quote-input" rows="4" cols="60" name="quote">
     </textarea></br>
@@ -14,7 +14,7 @@ $("#dialog").dialog({
         bgiframe: true,
         autoOpen: false,
         height: 250,
-        width: 450,
+        width: 465,
         title: "Add Quote",
         modal: true,
         buttons: { 'Post Quote': function () {
@@ -73,14 +73,9 @@ $(document).ready( function(){
 });
 </script>
 
-<div>
-    TODO:<br>
-    Random <br>
-    Voting interface <br>
-    Sort by vote <br>
-    jQuery UI form
-
+<div id="footer">
+    <a href="http://github.com/bgianfo/rit-qdb/issues">Bug Tracker</a> | <a
+        href="http://github.com/bgianfo/rit-qdb/tree/master">Grab the Code</a>
 </div>
-
 </body>
 </html>
