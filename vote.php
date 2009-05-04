@@ -1,6 +1,6 @@
 <?php
 
-include("config.php");
+include("inc/config.php");
 
 $id = filter_input( INPUT_POST,
  	  	    'id',
@@ -14,5 +14,7 @@ else
 {
   echo "Id:$id";
 }
+
 vote($id);
+
 ?>

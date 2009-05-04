@@ -1,0 +1,41 @@
+<?php
+include("inc/config.php");
+header ("Content-Type: text/xml");
+header('Pragma: public');
+header('Cache-control: private');
+header('Expires: -1');
+echo "<?xml version=\"1.0\"?>\n";
+?>
+<rss version="2.0">
+  <channel>
+    <title>RIT QDB</title>
+    <link>http://lame.ws/rit/</link>
+    <description>RIT Quote Database</description>
+    <language>en-us</language>
+    <pubDate>Tue, 10 Jun 2003 04:00:00 GMT</pubDate>
+    <lastBuildDate>Tue, 10 Jun 2003 09:41:01 GMT</lastBuildDate>
+    <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+    <generator>Weblog Editor 2.0</generator>
+    <managingEditor>awesome@lame.ws</managingEditor>
+    <webMaster>webmaster@lame.ws</webMaster>
+    <ttl>5</ttl>
+<?php
+$link = connect();
+$query = "SELECT * FROM quotes ORDER BY id DESC";
+$result = query($query);
+for ( $i = 0; $i < 5; $i++ )
+{
+   $line = fetch($result); 
+   echo "\t\t<item>\n";
+   echo "\t\t\t<title>#".$line["id"]."</title>\n";
+   echo "\t\t\t<link>http://lame.ws/rit/quote.php?id=".$line["id"]."</link>\n";
+   echo "\t\t\t<description>".$line["data"]."</description>\n";
+   echo "\t\t\t<pubDate>Tue, 03 Jun 2003 09:39:21 GMT</pubDate>\n";
+   echo "\t\t\t<guid>http://lame.ws/rit/quote.php?id=".$line["id"]."</guid>\n";
+   echo "\t\t</item>\n";
+}
+free($result);
+close($link);
+?>
+  </channel>
+</rss>

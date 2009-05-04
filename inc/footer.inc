@@ -63,12 +63,11 @@ $(document).ready( function(){
                  type: "POST",
                  data: "id="+$(this).attr("id"),
                  success: function(html) {
-                    console.log(html);
+                    $("#score").html("score: "+(parseInt($('#score').attr("class"))+1));
                  }
         });
-        console.log($(this));
         $(this).addClass('ui-icon-check');
-        console.log("clicked");
+        $(this).unbind('click');
     });
 });
 </script>

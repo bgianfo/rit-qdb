@@ -1,6 +1,6 @@
 <?php
 
-include("config.php");
+include("inc/config.php");
 
 $quote = filter_input( INPUT_POST,
  	  	       'quote',

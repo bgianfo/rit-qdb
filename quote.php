@@ -1,55 +1,38 @@
 <html>
     <head>
-
-    	<script
-        src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-    	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/jquery-ui.min.js"></script>
-        <link rel="stylesheet" href="http://lame.ws/rit/style/style.css" type="text/css" />
-        <link rel="stylesheet"
-        href="http://lame.ws/rit/style/smoothness/jquery-ui-1.7.1.custom.css" type="text/css" />
-        <script src="http://lame.ws/rit/js/jquery.corners.min.js"></script>
-
-	<title>
-	RIT Quotes
-	</title>
-    </head>
-<body>
-<div>
-
+        <?php include("inc/head.inc"); ?>
 <?php
-
-include("config.php");
-
-echo $_POST["id"];
-echo $_GET["id"];
+include("inc/navbar.inc");
+include("inc/config.php");
 $i = filter_input( INPUT_GET,
  	  	       'id',
  		       FILTER_SANITIZE_STRING, 
                        FILTER_FLAG_ENCODE_HIGH|FILTER_FLAG_ENCODE_LOW );
 if (is_null($i))
 {
-    echo "Error"; 
+    echo "\t\t<title>RIT Quotes: Error!</title>";
+    echo "\t</head>";
+    echo "<body>";
+    echo "Error! no quote specified"; 
 }
 else 
 {
-    echo "Quote #".$i;
-}
+    echo "\t\t<title>RIT Quotes: #".$i."</title>";
+    echo "\t</head>";
+    echo "<body>";
 
-$link = connect();
-$query = "SELECT data,user,time,score FROM quotes WHERE id=".$i;
-$result = query($query);
-$line = fetch($result); 
-free($result);
-close($link);
-?>
+    $link = connect();
+    $query = "SELECT data,user,time,score FROM quotes WHERE id=".$i;
+    $result = query($query);
+    $line = fetch($result); 
 
-<?php
     echo "<div class=\"q-container\">\n";
         echo "<table class=\"quote-title\">\n";
             echo "<tr>\n";
-                echo "<td>#".$i."</a></td>";
-                echo "<td><b>score:</b>".$line["score"]."</td>";
-                echo "<td id=\"uname\" ><b>user:</b>". $line["user"]."</td>\n";
+            echo "<td><a title=\"Direct Link\" href=\"/rit/quote.php?id=".$i."\">#".$i."</a></td>";
+                echo "<td id=\"score\" class=\"".$line["score"]."\"> score: ".$line["score"]."</td>";
+                echo "<td><a title=\"vote up\" id=\"".$line["id"]."\" class=\"ui-icon ui-icon-plusthick\" >+</a></td>";
+                echo "<td id=\"uname\" ><b>user: </b>".$line["user"]."</td>\n";
             echo "</tr>\n";
         echo "</table>\n";
         echo "<div id=\"quote\">\n";
@@ -57,7 +40,11 @@ close($link);
         echo "</div>\n";
     echo "</div>\n";
 
-include("footer.html");
+    free($result);
+    close($link);
+}
+
+include("inc/footer.inc");
 ?>
 
 
